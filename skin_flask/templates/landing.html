@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="hero" style="background-image: url('{{ url_for('static', filename='img/img2.jpg') }}');">
+  <div class="hero-overlay">
+    <h1>Welcome to SkinSaathi</h1>
+    <p>Your companion for skin type prediction and home remedies.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="{{ url_for('register') }}">Create Account</a>
+      <a class="btn" href="{{ url_for('login') }}">Login</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

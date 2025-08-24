@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="rec-container">
+  <div class="rec-left">
+    <h2>{{ skin_type.capitalize() }} Skin – Ingredients</h2>
+    <div class="card-grid">
+      {% for ing, img in images %}
+      <div class="card">
+        <img src="{{ url_for('static', filename='img/' ~ img) }}" alt="{{ ing }}">
+        <div class="card-title">{{ ing }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="rec-right">
+    <h2>Home Remedies</h2>
+    <div class="muted">Skin Type: {{ skin_type.capitalize() }} • {{ remedies|length }} remedies</div>
+    <ul class="remedies">
+      {% for r in remedies %}
+        <li>{{ r }}</li>
+      {% endfor %}
+    </ul>
+   
+  </div>
+</div>
+{% endblock %}

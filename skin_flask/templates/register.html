@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="split-container">
+  <div class="split-left">
+    <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="logo" class="big-logo">
+  </div>
+  <div class="split-right card">
+    <h2>Create a SkinSaathi Account</h2>
+    <form method="post">
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+
+      <label>Username</label>
+      <input type="text" name="username" required>
+
+      <label>Password</label>
+      <input type="password" name="password" required>
+
+      <label>Confirm Password</label>
+      <input type="password" name="confirm" required>
+
+      <button class="btn primary" type="submit">Create Account</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

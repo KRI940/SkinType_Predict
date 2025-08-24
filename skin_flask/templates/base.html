@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "SkinSaathi" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="logo" class="logo">
+      <span class="brand">SkinSaathi</span>
+    </div>
+    <div class="nav-links">
+      <a href="{{ url_for('landing') }}">Home</a>
+      <a href="{{ url_for('risks') }}">Risk Detection</a>
+      <a href="{{ url_for('features') }}">Features</a>
+      <a href="{{ url_for('how_it_works') }}">How it works</a>
+      <a href="{{ url_for('faq') }}">FAQ</a>
+      {% if session.get('user') %}
+        <a href="{{ url_for('main_app') }}">Main App</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash-area">
+        {% for category, msg in messages %}
+          <div class="flash {{ category }}">{{ msg }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
