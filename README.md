@@ -1,8 +1,7 @@
 
 # SkinSaathi (Flask)
 
-SkinSaathi is a Flask-based web application that mirrors your Tkinter GUI app.  
-It predicts skin type using a trained ML model and provides personalized skincare ingredient recommendations with remedies.
+SkinSaathi is a Flask-based web application thatpredicts skin type using a trained ML model and provides personalized skincare ingredient recommendations with remedies.
 
 ---
 
